@@ -1,10 +1,9 @@
-import numpy as np
-
 # Austin Hester
 # Logistic Regression
 # CS 4340 - Intro to Machine Learning
 # 11.05.17
 
+import numpy as np
 # define x_0
 x0 = 1
 

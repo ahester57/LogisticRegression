@@ -19,7 +19,7 @@ X	|	Y
 where X is weeks of inactivity and Y is pass/fail (0/1)
 
 We use logistic to regression to find a weight vector.  
-With a step size, c = 0.01, and 2000 iterations,    
+With a step size, c = 0.01, weights initialized at 1, and 2000 iterations,    
 we obtain w_v = { -1.81 , 0.55 }.  
 
 We can use these weights to find the chance of passing given
