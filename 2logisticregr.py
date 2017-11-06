@@ -8,7 +8,7 @@ import numpy as np
 # define x_0
 x0 = 1
 
-# ln L = sum_1_n{ x_i^j * ( y^j - ( e^{w0x0+w1x1} / (1 + e^{w0x0+w1x1} )))}
+# ln L = sum_1_n{ x_i^j * ( y^j - ( e^{w0x0+w1x1+w2x2} / (1 + e^{w0x0+w1x1+w2x2})))}
 
 # compute d/dwi ln L with given x, y, weights, and step size
 def ddw(i, x, y, w_, c):
@@ -62,6 +62,7 @@ for t in range(T):
     print("===========================")
 
 # print weight vector
+print(x)
 print("\nWeight vector: ", w_)
 print("\nWeeks of Inactivity")
 print("x avg AP exam\t\tChances of passing")
