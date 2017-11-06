@@ -1,6 +1,6 @@
 # Logistic Regression  
 ### Austin Hester
-### CS 4340
+### CS 4340 - Intro to Machine Learning
 ### Uday Chakraborty
 
 Uses logistic regression to formulate a correlation between weeks 
@@ -15,7 +15,8 @@ X	|	Y
 5	|	0  
 6	|	1  
 7	|	1  
-8	|	1  
+8	|	1,  
+where X is weeks of inactivity and Y is pass/fail (0/1)
 
 We use logistic to regression to find a weight vector.  
 With a step size, c = 0.01, and 2000 iterations,    
@@ -28,6 +29,9 @@ weeks of inactity.
 
 At x = 3, we get  
 
-```[P ( Y = 0 | x = 3 ) = 1 / (1 + e^(-1.81 + (3 x 0.55))) = 0.535]```
+```P ( Y = 0 | x = 3 ) = 1 / (1 + e^(-1.81 + (3 x 0.55))) = 0.535```
+
+Which means, at 3 weeks of inactivity, you have a 53.5% chance of passing
+the course.
 
 
