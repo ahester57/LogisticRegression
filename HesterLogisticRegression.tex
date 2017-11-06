@@ -130,7 +130,7 @@ for i in range(0,13):
 
 \section*{Notes}
 
-\textbf{(a)} Logistic regression results 
+\hspace{-2.5em} \textbf{(a)} Logistic regression results 
 \begin{lstlisting}[breaklines=true,basicstyle=\small]
 
 Weight vector:  [-1.8142984  0.5594476]
@@ -144,12 +144,15 @@ Weeks of Inactivity		Chances of passing
 	 5 		 			27.23 %
 	 6 		 			17.62 %
 	 7 		 			10.89 %
-	 8 		 			6.53 %
-	 9 		 			3.84 %
-	 10 			 	2.23 %
-	 11 		 		1.29 %
-	 12 		 		0.74 %
+	 8 		 			 6.53 %
+	 9 		 			 3.84 %
+	 10 			 	 2.23 %
+	 11 		 		 1.29 %
+	 12 		 		 0.74 %
 \end{lstlisting}
+
+I started with a step size, $c = 0.1$, which gave shaky results for the weight vector. It would bounce from $ < -2.24, 1.02 >$ to $ < -2.36, 0.50 >$ every other iteration. \\
+So I decided to lower the step size to $c = 0.01$ to avoid the jumpiness. \\
 
 Running logistic regression over our input data gives us a weight vector of $ < -1.81,  0.56 > $. \\
 
@@ -159,14 +162,45 @@ At 5 weeks of inactivity, a student has a 27.2\% chance of passing the course. \
 
 \newpage
 
-\textbf{(b)} Logistic regression can very well be used for classification. \\
+\hspace{-2.5em} \textbf{(b)} Can logistic regression be used for classification? \\
+
+Logistic regression can very well be used for classification. \\
+
 We can classify using: \\
 
 if [ $P( Y=0 | X) > P( Y=1 | X)$ ] then pass
 
 \hspace{1em} else fail \\
 
-\textbf{(c)} 
+\hspace{-2.5em} \textbf{(c)} Suppose two or more rows in the training data set have the same x-value, but different y-values
+
+\hspace{1em} (e.g. (x=3,y=1) and (x=3,y=0)). \\
+
+Would we still be able to obtain a valid logistic regression of Y on X? \\
+
+Yes. Here is a run with both 0 and 1 at x = 3:
+
+\begin{lstlisting}[breaklines=true,basicstyle=\small]
+
+Weight vector:  [-1.08989798  0.43602457]
+
+Weeks of Inactivity		Chances of passing
+	 0 					 74.84 %
+	 1 					 65.79 %
+	 2 					 55.42 %
+	 3 					 44.57 %
+	 4 					 34.2 %
+	 5 		 			 25.16 %
+	 6 		 			 17.85 %
+	 7 		 			 12.32 %
+	 8 		 			  8.33 %
+	 9 					  5.55 %
+	 10 				  3.66 %
+	 11 				  2.4 %
+	 12 				  1.56 %
+\end{lstlisting}
+
+Having x-values with different y-values adds a degree of uncertainty, which leads to less confident predictions. 
 
 
 
